@@ -7,7 +7,7 @@ end
 task :commit do
 	sh "( cd website && git add -A )"
 	sh "( cd website && git add -u )"
-	sh "( cd website && git commit -m semiauto-update )"
+	sh "( cd website && git commit -m semiauto-update; echo -n )"
 end
 task :push do
 	sh "( cd website && git push )"
