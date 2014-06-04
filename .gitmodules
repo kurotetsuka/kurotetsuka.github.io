@@ -1,4 +1,0 @@
-[submodule "website"]
-	path = website
-	url = git@github.com:kurotetsuka/kurotetsuka.github.io.git
-	branch = gh-pages
