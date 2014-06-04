@@ -1,0 +1,19 @@
+task :default => [ :generate ]
+
+task :generate do
+	sh "rm -rf website/*"
+	sh "cp -r html/* website"
+end
+task :commit do
+	sh "( cd website && git add -A )"
+	sh "( cd website && git add -u )"
+	sh "( cd website && git commit -m semiauto-update )"
+end
+task :push do
+	sh "( cd website && git push )"
+end
+task :deploy_local => [ :generate ] do
+	sh "sudo rm -rf /var/www/html/*"
+	sh "sudo cp -r website/* /var/www/html"
+end
+task :deploy => [ :generate, :commit, :push ]
