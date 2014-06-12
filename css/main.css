@@ -1,9 +1,15 @@
 body {
 	background-color:#202020;
 	color: #cccccc;
+	text-shadow: 0 0 1px #55ccee;
 }
 
 h2 {
 	color: #cccccc;
 	text-shadow: 0 0 7px #55ccee;
+}
+
+#profile_icon {
+	width: 64px;
+	height: 64px;
 }
