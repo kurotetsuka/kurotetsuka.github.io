@@ -1,19 +1,29 @@
 task :default => [ :generate ]
 
-task :generate do
-	sh "rm -rf website/*"
-	sh "cp -r html/* website"
+task :freshen => [ :clean, :generate]
+task :generate => [ :gen_images, :gen_html]
+task :clean do
+	%x[ rm -rf website/*]
 end
+
+task :gen_images do
+	%x[ tool/gen_kuro.sh]
+end
+task :gen_html do
+	%x[ cp -r html/* website]
+end
+
 task :commit do
-	sh "( cd website && git add -A )"
-	sh "( cd website && git add -u )"
-	sh "( cd website && git commit -m semiauto-update; echo -n )"
+	%x[ cd website && git add -A ]
+	%x[ cd website && git add -u ]
+	%x[ cd website && git commit -m semiauto-update; echo -n ]
 end
 task :push do
-	sh "( cd website && git push )"
+	%x[ cd website && git push ]
 end
-task :deploy_local => [ :generate ] do
-	sh "sudo rm -rf /var/www/html/*"
-	sh "sudo cp -r website/* /var/www/html"
+
+task :deploy => [ :generate, :commit, :push]
+task :deploy_local => [ :generate] do
+	%x[ sudo rm -rf /var/www/html/*]
+	%x[ sudo cp -r website/* /var/www/html]
 end
-task :deploy => [ :generate, :commit, :push ]

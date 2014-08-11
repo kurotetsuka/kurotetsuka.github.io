@@ -1,9 +1,18 @@
 body {
-	background-color:#202020;
-	color: #cccccc;
+	background: #181818;
+	background-image: url('/img/bg.png');
+	background-repeat: repeat;
+	color: #f3f3f3;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 0 0 1px #eeeeee;
 }
 
 h2 {
-	color: #cccccc;
-	text-shadow: 0 0 7px #55ccee;
+	color: #f3f3f3;
+	text-shadow: 0 0 7px #eeeeee;
+}
+
+#profile_icon {
+	width: 512px;
+	height: 512px;
 }
