@@ -1,18 +1,22 @@
 body {
 	background: #181818;
-	background-image: url('/img/bg.png');
-	background-repeat: repeat;
 	color: #f3f3f3;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-shadow: 0 0 1px #eeeeee;
-}
+	font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+	text-shadow: 0 0 1px #eeeeee;}
 
 h2 {
 	color: #f3f3f3;
-	text-shadow: 0 0 7px #eeeeee;
-}
+	text-shadow: 0 0 7px #eeeeee;}
 
+/* image sizes */
 #profile_icon {
-	width: 512px;
-	height: 512px;
-}
+	width: 200px;
+	height: 200px;}
+
+/* link stuff */
+a:link, a:visited {
+	color: #228a67;
+	text-decoration: none}
+a:link:hover, a:visited:hover {
+	/*color: #112921;*/
+	text-decoration: underline}
